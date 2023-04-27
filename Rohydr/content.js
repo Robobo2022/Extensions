@@ -9,14 +9,19 @@ button.innerHTML = "RoHydr";
 button.classList.add("rohydr-button");
 
 let popup = null;
+let isPopupVisible = false;
 
 button.addEventListener("click", () => {
-  if (popup) {
-    popup.remove();
-    popup = null;
+  if (isPopupVisible) {
+    popup.classList.remove("show");
+    setTimeout(() => {
+      popup.remove();
+      popup = null;
+      isPopupVisible = false;
+    }, 200);
     return;
   }
-  
+
   popup = document.createElement("div");
   popup.classList.add("rohydr-popup");
   popup.innerHTML = `
@@ -25,6 +30,13 @@ button.addEventListener("click", () => {
   `;
 
   document.body.appendChild(popup);
+  const buttonRect = button.getBoundingClientRect();
+  popup.style.top = `${buttonRect.bottom}px`;
+  popup.style.left = `${buttonRect.left}px`;
+  setTimeout(() => {
+    popup.classList.add("show");
+    isPopupVisible = true;
+  }, 0);
 });
 
 const navbar = document.querySelector(".navbar-right");
