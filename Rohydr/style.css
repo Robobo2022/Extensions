@@ -1,0 +1,29 @@
+.rohydr-button {
+    background-color: #0083C3;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 4px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+    top: 4px;
+    margin-right: 8px;
+  }
+  
+  .rohydr-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 16px;
+    z-index: 9999;
+  }
+  
+  .rohydr-popup h3 {
+    margin-top: 0;
+  }
+  
