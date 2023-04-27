@@ -5,7 +5,7 @@ link.rel = "stylesheet";
 link.href = chrome.extension.getURL("style.css");
 document.head.appendChild(link);
 
-button.innerHTML = "";
+button.innerHTML = "RoHydr";
 button.classList.add("rohydr-button");
 
 let popup = null;
