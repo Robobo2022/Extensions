@@ -1,42 +1,33 @@
-// content.js
+// create the button element
+const button = document.createElement("button");
+button.innerHTML = "RoHydr";
+button.classList.add("rohydr-button");
 
-document.addEventListener("DOMContentLoaded", function() {
-  // Create the new list item element
-  var newListItem = document.createElement("li");
-  newListItem.style.display = "block";
-
-  // Create the new link element
-  var newLink = document.createElement("a");
-  newLink.className = "dynamic-overflow-container text-nav";
-  newLink.href = "#";
-  newLink.id = "nav-custom-button";
-  newLink.target = "_self";
-
-  // Create the inner elements for the link
-  var innerDiv = document.createElement("div");
-  var iconSpan = document.createElement("span");
-  iconSpan.className = "icon-nav-custom-button";
-  var textSpan = document.createElement("span");
-  textSpan.className = "font-header-2 dynamic-ellipsis-item";
-  textSpan.textContent = "Custom Button";
-
-  // Build the link element
-  innerDiv.appendChild(iconSpan);
-  newLink.appendChild(innerDiv);
-  newLink.appendChild(textSpan);
-
-  // Add the link to the list item
-  newListItem.appendChild(newLink);
-
-  // Add the new list item to the navigation menu
-  var navMenu = document.querySelector(".nav-menu");
-  if (navMenu) {
-    navMenu.appendChild(newListItem);
-  }
-
-  // Create a new text element and add it to the page
-  var newText = document.createElement("p");
-  newText.textContent = "New text added by RoHydr";
-  newText.style.color = "red";
-  document.body.appendChild(newText);
+// add a click event listener to the button
+button.addEventListener("click", () => {
+  // replace this with your desired functionality
+  console.log("Button clicked!");
 });
+
+// add the button to the page
+const navbar = document.querySelector(".navbar-right");
+navbar.prepend(button);
+
+// add some CSS styling to the button
+const style = document.createElement("style");
+style.innerHTML = `
+.rohydr-button {
+  background-color: #0083C3;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 4px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  top: 4px;
+  margin-right: 8px;
+}
+`;
+document.head.appendChild(style);
