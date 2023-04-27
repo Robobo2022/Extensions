@@ -40,7 +40,7 @@
 }
 
 .rohydr-popup-header h3 {
-  margin-top: 0;
+  display: none;
 }
 
 .rohydr-toggle {
@@ -82,4 +82,8 @@ input:checked + .rohydr-toggle-slider:before {
   background-color: white;
   border-radius: 50%;
   transition: transform 0.2s ease-out;
+}
+
+.rohydr-popup-content p {
+  color: transparent;
 }
