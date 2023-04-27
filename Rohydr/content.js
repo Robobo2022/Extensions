@@ -25,8 +25,16 @@ button.addEventListener("click", () => {
   popup = document.createElement("div");
   popup.classList.add("rohydr-popup");
   popup.innerHTML = `
-    <h3>RoHydr Popup</h3>
-    <p>This is the popup content.</p>
+    <div class="rohydr-popup-header">
+      <h3>RoHydr Popup</h3>
+      <label class="rohydr-toggle">
+        <input type="checkbox">
+        <span class="rohydr-toggle-slider"></span>
+      </label>
+    </div>
+    <div class="rohydr-popup-content">
+      <p>This is the popup content.</p>
+    </div>
   `;
 
   document.body.appendChild(popup);
