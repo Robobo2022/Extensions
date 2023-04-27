@@ -23,7 +23,9 @@
   z-index: 9999;
   opacity: 0;
   transition: transform 0.2s ease-out, opacity 0.2s ease-out;
+  height: 300px;
 }
+
 
 .rohydr-popup.show {
   opacity: 1;
