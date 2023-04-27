@@ -1,29 +1,46 @@
 .rohydr-button {
-    background-color: #0083C3;
-    color: white;
-    font-size: 12px;
-    font-weight: bold;
-    padding: 4px 10px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    position: relative;
-    top: 4px;
-    margin-right: 8px;
-  }
-  
-  .rohydr-popup {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #fff;
-    border: 1px solid #ccc;
-    padding: 16px;
-    z-index: 9999;
-  }
-  
-  .rohydr-popup h3 {
-    margin-top: 0;
-  }
-  
+  background-color: #0083C3;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 4px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  top: 4px;
+  margin-right: 8px;
+}
+
+.rohydr-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 16px;
+  z-index: 9999;
+  opacity: 0;
+  transition: transform 0.2s ease-out, opacity 0.2s ease-out;
+}
+
+.rohydr-popup.show {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.rohydr-popup h3 {
+  margin-top: 0;
+}
+
+.rohydr-popup-close {
+  background-color: #ccc;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-size: 12px;
+  cursor: pointer;
+  margin-top: 8px;
+}

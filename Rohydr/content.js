@@ -12,11 +12,14 @@ let popup = null;
 
 button.addEventListener("click", () => {
   if (popup) {
-    popup.remove();
-    popup = null;
+    popup.classList.remove("show");
+    setTimeout(() => {
+      popup.remove();
+      popup = null;
+    }, 200);
     return;
   }
-  
+
   popup = document.createElement("div");
   popup.classList.add("rohydr-popup");
   popup.innerHTML = `
@@ -25,6 +28,7 @@ button.addEventListener("click", () => {
   `;
 
   document.body.appendChild(popup);
+  setTimeout(() => popup.classList.add("show"), 0);
 });
 
 const navbar = document.querySelector(".navbar-right");
