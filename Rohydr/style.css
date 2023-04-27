@@ -26,23 +26,61 @@
   height: 300px;
 }
 
-
 .rohydr-popup.show {
   opacity: 1;
   transform: translateX(-50%) scale(1);
 }
 
-.rohydr-popup h3 {
+.rohydr-popup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.rohydr-popup-header h3 {
   margin-top: 0;
 }
 
-.rohydr-popup-close {
-  background-color: #ccc;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  padding: 4px 8px;
-  font-size: 12px;
+.rohydr-toggle {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+}
+
+.rohydr-toggle input {
+  display: none;
+}
+
+.rohydr-toggle-slider {
+  position: absolute;
   cursor: pointer;
-  margin-top: 8px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  border-radius: 20px;
+  transition: background-color 0.2s ease-out;
+}
+
+.rohydr-toggle-slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.2s ease-out;
+}
+
+input:checked + .rohydr-toggle-slider {
+  background-color: #0083C3;
+}
+
+input:checked + .rohydr-toggle-slider:before {
+  transform: translateX(20px);
 }
