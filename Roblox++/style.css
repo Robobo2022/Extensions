@@ -1,35 +1,23 @@
-.rohydr-button {
-  background-color: #0083C3;
-  color: white;
-  font-size: 12px;
-  font-weight: bold;
-  padding: 4px 10px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  position: relative;
-  top: 4px;
-  margin-right: 8px;
-}
-
 .rohydr-popup {
-  position: absolute;
-  top: 100%;
+  position: fixed;
+  top: 50%;
   left: 50%;
   transform: translateX(-50%) scale(0.8);
-  background-color: rgba(255, 255, 255, 0.9);
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.4);
+  background-color: #1A1A1A;
+  border: 1px solid #6D8FB6;
   padding: 16px;
   z-index: 9999;
   opacity: 0;
   transition: transform 0.2s ease-out, opacity 0.2s ease-out;
-  height: 300px;
+  height: 400px;
+  width: 500px;
+  box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.4);
 }
 
 .rohydr-popup.show {
   opacity: 1;
   transform: translateX(-50%) scale(1);
+  box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.8), 0px 0px 40px rgba(255, 255, 255, 0.6), 0px 0px 50px rgba(255, 255, 255, 0.4);
 }
 
 .rohydr-popup-header {
@@ -43,47 +31,43 @@
   display: none;
 }
 
-.rohydr-toggle {
-  position: absolute;
-  left: 16px;
-  top: 16px;
-  display: inline-block;
-  width: 40px;
-  height: 20px;
-}
-
-.rohydr-toggle-slider {
-  position: absolute;
+.rohydr-button {
+  background-color: #5a97dc;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 4px 10px;
+  border: none;
+  border-radius: 4px;
   cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  border-radius: 20px;
+  position: relative;
+  top: 4px;
+  margin-right: 8px;
   transition: background-color 0.2s ease-out;
 }
 
-input:checked + .rohydr-toggle-slider {
-  background-color: #0083C3;
+.rohydr-button:hover {
+  background-color: #2F4B6F;
 }
 
-input:checked + .rohydr-toggle-slider:before {
-  transform: translateX(-20px);
-}
-
-.rohydr-toggle-slider:before {
-  position: absolute;
-  content: "";
-  height: 16px;
-  width: 16px;
-  right: 2px;
-  bottom: 2px;
-  background-color: white;
-  border-radius: 50%;
-  transition: transform 0.2s ease-out;
+.rohydr-popup-content {
+  max-height: 220px;
+  overflow-y: auto;
 }
 
 .rohydr-popup-content p {
-  color: transparent;
+  color: white;
+}
+
+.rohydr-glow {
+  animation: rohydr-glow 1s ease-in-out infinite alternate;
+}
+
+@keyframes rohydr-glow {
+  from {
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.4);
+  }
+  to {
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.8);
+  }
 }
