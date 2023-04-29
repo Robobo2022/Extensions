@@ -5,7 +5,7 @@ link.rel = "stylesheet";
 link.href = chrome.extension.getURL("style.css");
 document.head.appendChild(link);
 
-button.innerHTML = "RoHydr";
+button.innerHTML = "Roblox++";
 button.classList.add("rohydr-button");
 
 let popup = null;
@@ -26,7 +26,7 @@ button.addEventListener("click", () => {
   popup.classList.add("rohydr-popup");
   popup.innerHTML = `
     <div class="rohydr-popup-header">
-      <h3>RoHydr Popup</h3>
+      <h3>Roblox++ Popup</h3>
       <label class="rohydr-toggle">
         <input type="checkbox">
         <span class="rohydr-toggle-slider"></span>
@@ -45,6 +45,15 @@ button.addEventListener("click", () => {
     popup.classList.add("show");
     isPopupVisible = true;
   }, 0);
+});
+
+window.addEventListener("scroll", () => {
+  if (isPopupVisible) {
+    const buttonRect = button.getBoundingClientRect();
+    popup.style.top = `${buttonRect.bottom}px`;
+    popup.style.left = `${buttonRect.left}px`;
+    popup.style.position = "fixed";
+  }
 });
 
 const navbar = document.querySelector(".navbar-right");
