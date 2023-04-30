@@ -10,8 +10,9 @@
   opacity: 0;
   transition: transform 0.2s ease-out, opacity 0.2s ease-out;
   height: 400px;
-  width: 500px;
+  width: 400px;
   box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.4);
+  border-radius: 10px;
 }
 
 .rohydr-popup.show {
@@ -61,13 +62,18 @@
 
 .rohydr-glow {
   animation: rohydr-glow 1s ease-in-out infinite alternate;
+  border-radius: 10px;
 }
 
 @keyframes rohydr-glow {
-  from {
-    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.4);
+  0% {
+    box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.4), 0 0 10px #fff;
   }
-  to {
-    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.8);
+  50% {
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.8), 0 0 20px #00c7f7;
+    background: linear-gradient(to bottom right, #00c7f7, #00c7f7, #00c7f7, #fff);
+  }
+  100% {
+    box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.4), 0 0 10px #fff;
   }
 }
